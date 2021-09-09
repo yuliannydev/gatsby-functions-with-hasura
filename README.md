@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby functions with Hasura, and Mailchimp
+  Gatsby functions with Hasura, and Mandrill
 </h1>
 
 ## 🚀 Quick start
