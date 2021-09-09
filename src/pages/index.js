@@ -4,7 +4,7 @@ const IndexPage = () => {
   const [email, setEmail] = useState(``);
   const submit = async (event) => {
     event.preventDefault();
-    const response = await fetch(`https://sincere-heron-48.hasura.app/v1/graphql`, {
+    const response = await fetch(`${process.env.HASURA_API_URL}`, {
       method: `POST`,
       headers: {
         "content-type": "application/json",

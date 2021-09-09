@@ -1,14 +1,35 @@
-const mailchimp = require('@mailchimp/mailchimp_transactional')('YOUR_API_KEY');
+const fetch = require(`node-fetch`).default;
 
-module.exports = (req, res) => {
-async function callPing() {
-  const response = await mailchimp.users.ping();
-  console.log(response);
-}
-
-callPing();
-
-res.status(200).json({
-    okey: true,
-});
-}
+module.exports = async (req, res) => {
+    const response = await fetch(
+        `https://mandrillapp.com/api/1.0/messages/send`,
+        {
+            method: `POST`,
+            headers: {
+                "content-type": "aplication/json",
+            },
+            body: JSON.stringify({
+                key: "sGWMVvncpLP56uKybfTjeg",
+                message:  {
+                    html: "Hi",
+                    text: "Hello world",
+                    subject: "Hi from gatsby functions",
+                    from_email: "yuliannydev@gmail.com",
+                    from_name: "Raydesite",
+                    to:[{
+                        email: "yuliannydev@gmail.com",
+                        name: "Yulianny",
+                        type: "to",
+                    }],
+                    },
+            })
+        })
+        .then((result) => {
+            return result.json()});
+        console.log({ 
+            response,
+         });
+         res.status(200).json({
+             okey: true,
+         });
+};
