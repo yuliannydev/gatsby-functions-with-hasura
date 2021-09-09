@@ -34,7 +34,9 @@ const IndexPage = () => {
       <form onSubmit={submit}>
         <input 
         value={email} 
-        onChange={(event) => {setEmail(event.target.value)}}/>
+        onChange={(event) => {setEmail(event.target.value)}} 
+        type="email"
+        required />
         <button type="submit">
           Submit
         </button>
