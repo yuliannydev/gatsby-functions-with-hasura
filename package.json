@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_transactional": "^1.0.36",
     "gatsby": "^3.13.0",
     "gatsby-plugin-gatsby-cloud": "^3.1.0",
     "react": "^17.0.1",
